@@ -66,6 +66,7 @@ console.log("20 graus Farenheit son " + toCelsius(20) + " graus celsius")
  
  greet("Cristian");
 
+ /******************EXERCICI 2 **************************/
  
  /*users.map(function (user) {
     user.firstName;
@@ -83,6 +84,15 @@ let usersName = [];users.forEach(function (user) {
     //usersName.push(user.firstName);
     console.log(user.firstName);
 });
-  
 
+
+/******************EXERCICI 3 **************************/
  
+
+let epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+
+let total = epic.reduce(function (previous, current) {
+    return previous + " " + current;
+});
+
+console.log(total);
