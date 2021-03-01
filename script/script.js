@@ -65,3 +65,24 @@ console.log("20 graus Farenheit son " + toCelsius(20) + " graus celsius")
  let greet = (who) => {console.log("Hello " + who)};
  
  greet("Cristian");
+
+ 
+ /*users.map(function (user) {
+    user.firstName;
+ });*/
+ 
+let users = [
+    { firstName: 'Homer', lastName: 'Simpson' },
+    { firstName: 'Marge', lastName: 'Simpson' },
+    { firstName: 'Bart', lastName: 'Simpson' },
+    { firstName: 'Lisa', lastName: 'Simpson' },
+    { firstName: 'Maggie', lastName: 'Simpson' }
+];
+
+let usersName = [];users.forEach(function (user) {
+    //usersName.push(user.firstName);
+    console.log(user.firstName);
+});
+  
+
+ 
