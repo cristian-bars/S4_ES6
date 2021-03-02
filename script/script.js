@@ -110,3 +110,25 @@ revert(str);
 
 /******************EXERCICI 5 ***************************/
 
+
+function b(x) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(x);
+        }, 2000);
+      });
+ }
+ function a() {
+    b(10).then(v => {
+    doMoreWork(v);
+    });
+ }
+ 
+ function doMoreWork(y) {
+     console.log("Apareix el missatge després de 2 segons");
+ }
+ 
+ a(1);
+ 
+ 
+ 
