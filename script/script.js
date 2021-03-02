@@ -128,7 +128,31 @@ function b(x) {
      console.log("Apareix el missatge després de 2 segons");
  }
  
+ //El missatge apareixerà després de 2 segons per consola
  a(1);
  
  
- 
+ /********************EXERCICI 6 ****************************/
+let tasques = new Map();
+let tasks = [
+    {
+       'name' : 'Start React web',
+       'duration' : 120
+    },
+    {
+       'name' : 'Work out',
+       'duration' : 60
+    },
+    {
+       'name' : 'Procrastinate on facebook',
+       'duration' : 240
+    }
+];
+    
+tasks.forEach(desplega);
+
+function desplega(item, index) {
+    tasques.set(index,item.name);
+}
+
+console.log(tasques);
