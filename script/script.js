@@ -96,3 +96,17 @@ let total = epic.reduce(function (previous, current) {
 });
 
 console.log(total);
+
+
+/******************EXERCICI 4 **************************/
+
+let str = ['a', 'be', 'ce', 'de', 'e', 'efa'];
+
+let revert = (str) => { 
+    console.log(str.reverse()) 
+}
+
+revert(str);
+
+/******************EXERCICI 5 ***************************/
+
