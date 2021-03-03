@@ -156,3 +156,83 @@ function desplega(item, index) {
 }
 
 console.log(tasques);
+
+/***********************EXERCICI 7/8 ******************************/
+
+//Creem les crides a les funcions segons el botó de la pantalla que s'hagi clicat
+document.addEventListener("DOMContentLoaded", function() {
+   document.getElementById("taula").addEventListener('submit', crearTaula); 
+});
+
+let mostraTaula;
+
+function crearTaula(evento) {
+   evento.preventDefault();
+   let num1 = document.getElementById("number1");
+   let num2 = document.getElementById("number2");
+   let linia;
+   let taula = new Array;
+   
+   if(validarFormulari(num1, num2)){
+      for(let i=0;i<num2.value;i++){
+         linia = num1.value + " X " + (i+1) + " = " + num1.value*(i+1);
+         taula.push(linia);
+      }
+      
+      mostraTaula = "<table class='table'>";
+      taula.forEach(dibuixarTaula);
+      mostraTaula += "</table>";
+      document.getElementById('result').innerHTML = mostraTaula;
+   };
+   
+}
+
+function validarFormulari(num1, num2){
+   let acumErrores = 0;
+   
+   let numError = document.getElementById("numError");
+   let numError2 = document.getElementById("numError2");
+   
+   if (num1.value == ""){
+      num1.classList.add("is-invalid");
+		numError.classList.add("invalid-feedback");
+		numError.textContent = "El camp es obligatori";
+      acumErrores ++;
+   }else if (isNaN(num1.value)){
+      num1.classList.add("is-invalid");
+		numError.classList.add("invalid-feedback");
+		numError.textContent = "Ha de ser de caràcter numèric";
+      acumErrores ++;
+   }else {
+      num1.classList.remove("is-invalid");
+		num1.classList.add("is-valid");
+      numError.textContent = "";
+   }
+   
+   if (num2.value == ""){
+      num2.classList.add("is-invalid");
+		numError2.classList.add("invalid-feedback");
+		numError2.textContent = "El camp es obligatori";
+      acumErrores ++;
+   }else if (isNaN(num2.value)){
+      num2.classList.add("is-invalid");
+		numError2.classList.add("invalid-feedback");
+		numError2.textContent = "Ha de ser de caràcter numèric";
+      acumErrores ++;
+   }else {
+      num2.classList.remove("is-invalid");
+		num2.classList.add("is-valid");
+      numError2.textContent = "";
+   }
+   
+   if (acumErrores > 0){
+      return false;
+   }else{
+      console.log("Tot correcte!!");
+      return true;
+   } 
+}
+
+function dibuixarTaula(item){
+   mostraTaula += "<tr><td scope='row'>" + item + "</td></tr>";
+}
