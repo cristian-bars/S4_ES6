@@ -1,4 +1,6 @@
 
+ /******************EXERCICI 1 **************************/
+ 
 /*function multiply(num1, num2) {
     return num1 * num2;
  }*/
@@ -159,7 +161,7 @@ console.log(tasques);
 
 /***********************EXERCICI 7/8 ******************************/
 
-//Creem les crides a les funcions segons el botó de la pantalla que s'hagi clicat
+//Creem la crida a la funció quan cliquem al submit
 document.addEventListener("DOMContentLoaded", function() {
    document.getElementById("taula").addEventListener('submit', crearTaula); 
 });
@@ -235,4 +237,28 @@ function validarFormulari(num1, num2){
 
 function dibuixarTaula(item){
    mostraTaula += "<tr><td scope='row'>" + item + "</td></tr>";
+}
+
+/******************** EXERCICI 9 ***************************/
+
+let search;
+let str2;
+
+function filterNames(){
+   str2 = document.querySelectorAll("ul>li");
+   search = document.getElementById("myInput");
+   
+   str2.forEach(cerca);
+   
+}
+
+function cerca(item, index, arr){
+   let string = arr[index];
+   let busca = string.textContent.toLowerCase().includes(search.value);
+   
+   if (busca !== true) {
+      string.classList.add("amaga");
+   }else{
+      string.classList.remove("amaga");
+   }
 }
